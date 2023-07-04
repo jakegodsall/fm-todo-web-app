@@ -1,11 +1,38 @@
 import Header from './components/Header';
-import SelectButton from './components/UI/SelectButton';
+import TodoList from './components/TodoList';
+
+const TODO = [
+    {
+        content: 'Complete online JavaScript course',
+        complete: true,
+    },
+    {
+        content: 'Jog around the park 3x',
+        complete: false,
+    },
+    {
+        content: '10 minutes meditation',
+        complete: true,
+    },
+    {
+        content: 'Read for 1 hour',
+        complete: false,
+    },
+    {
+        content: 'Pick up groceries',
+        complete: false,
+    },
+    {
+        content: 'Complete Todo App on Frontend Mentor',
+        complete: false,
+    },
+];
 
 export default function Home() {
     return (
         <div className='bg-mobile-light w-full h-[16rem] bg-no-repeat bg-cover bg-center'>
             <Header />
-            <SelectButton />
+            <TodoList list={TODO} />
         </div>
     );
 }
