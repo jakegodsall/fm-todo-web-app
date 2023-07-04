@@ -1,8 +1,9 @@
+import Card from './UI/Card';
 import TodoItem from './TodoItem';
 
 const TodoList = ({ list }) => {
     return (
-        <div className='mx-2 w-full rounded-lg bg-primary'>
+        <Card className=''>
             <ul className='flex flex-col'>
                 {list.map((item, key) => {
                     return (
@@ -12,7 +13,7 @@ const TodoList = ({ list }) => {
                     );
                 })}
             </ul>
-        </div>
+        </Card>
     );
 };
 
