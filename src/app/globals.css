@@ -3,25 +3,23 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+    font-size: 62.5%;
+
+    --bright-blue: hsl(220, 98%, 61%);
+    --linear-gradient1: hsl(192, 100%, 67%);
+    --linear-gradient2: hsl(280, 87%, 65%);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.light {
+    --text-primary: hsl(236, 9%, 61%);
+    --text-secondary: hsl(233, 11%, 84%);
+    --background-primary: hsl(0, 0%, 98%);
+    --background-secondary: hsl(236, 33%, 92%);
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.dark {
+    --text-primary: hsl(233, 11%, 84%);
+    --text-secondary: hsl(236, 9%, 61%);
+    --background-primary: hsl(233, 14%, 35%);
+    --background-secondary: hsl(237, 14%, 26%);
 }
