@@ -5,21 +5,21 @@
 :root {
     font-size: 62.5%;
 
-    --bright-blue: hsl(220, 98%, 61%);
-    --linear-gradient1: hsl(192, 100%, 67%);
-    --linear-gradient2: hsl(280, 87%, 65%);
+    --color-bright-blue: hsl(220, 98%, 61%);
+    --color-linear-gradient1: hsl(192, 100%, 67%);
+    --color-linear-gradient2: hsl(280, 87%, 65%);
 }
 
 .light {
-    --text-primary: hsl(236, 9%, 61%);
-    --text-secondary: hsl(233, 11%, 84%);
-    --background-primary: hsl(0, 0%, 98%);
-    --background-secondary: hsl(236, 33%, 92%);
+    --color-text-primary: hsl(235, 19%, 35%);
+    --color-text-secondary: hsl(233, 11%, 84%);
+    --color-bg-primary: hsl(0, 0%, 98%);
+    --color-bg-secondary: hsl(236, 33%, 92%);
 }
 
 .dark {
-    --text-primary: hsl(233, 11%, 84%);
-    --text-secondary: hsl(236, 9%, 61%);
-    --background-primary: hsl(233, 14%, 35%);
-    --background-secondary: hsl(237, 14%, 26%);
+    --color-text-primary: hsl(233, 11%, 84%);
+    --color-text-secondary: hsl(236, 9%, 61%);
+    --color-bg-primary: hsl(233, 14%, 35%);
+    --color-bg-secondary: hsl(237, 14%, 26%);
 }

@@ -1,8 +1,10 @@
+'use client';
+
 import { createContext, useState, useEffect } from 'react';
 
 import isDarkMode from '../utils/isDarkMode';
 
-const setDarkModeRaw = () => {
+const setDarkModeRaw = (darkMode) => {
     const root = window.document.documentElement;
 
     root.classList.remove(darkMode ? 'light' : 'dark');
@@ -17,7 +19,7 @@ const DarkModeProvider = ({ initialDarkMode, children }) => {
     const [darkMode, setDarkMode] = useState(isDarkMode);
 
     if (initialDarkMode) {
-        setDarkModeRaw();
+        setDarkModeRaw(darkMode);
     }
 
     useEffect(() => {
@@ -25,7 +27,7 @@ const DarkModeProvider = ({ initialDarkMode, children }) => {
     }, [darkMode]);
 
     return (
-        <DarkModeContext.Provider value={{ darkMode, setDArkMode }}>
+        <DarkModeContext.Provider value={{ darkMode, setDarkMode }}>
             {children}
         </DarkModeContext.Provider>
     );

@@ -1,5 +1,9 @@
-import Image from 'next/image';
+import Header from './components/Header';
 
 export default function Home() {
-    return <main className=''>Test</main>;
+    return (
+        <div className='bg-mobile-light w-full h-[16rem] bg-no-repeat bg-cover bg-center'>
+            <Header />
+        </div>
+    );
 }
