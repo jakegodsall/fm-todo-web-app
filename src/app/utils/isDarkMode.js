@@ -11,7 +11,9 @@ const isDarkModeFromMediaQuery = () => {
 };
 
 const isDarkMode = () => {
-    return isDarkModeFromLocalStorage || isDarkModeFromMediaQuery;
+    if (typeof window !== 'undefined') {
+        return isDarkModeFromLocalStorage || isDarkModeFromMediaQuery;
+    }
 };
 
 export default isDarkMode;
