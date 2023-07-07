@@ -44,13 +44,15 @@ const TodoList = () => {
     const [list, setList] = useState(TODO);
 
     const onDragStartHandler = (e) => {
-        const initialPosition = e.currentTarget.dataset;
+        // get initial number in the list
+        const initialPosition = e.currentTarget.dataset.position;
 
+        // set state as item is being dragged
         setDragAndDrop({
+            ...dragAndDrop,
             draggedFrom: initialPosition,
             isDragging: true,
             originalOrder: list,
-            ...dragAndDrop,
         });
 
         e.dataTransfer.setData('text/html', '');
@@ -58,16 +60,20 @@ const TodoList = () => {
 
     const onDragOverHandler = (e) => {
         e.preventDefault();
+    };
 
+    const onDropHandler = (e) => {
         let newList = dragAndDrop.originalOrder;
 
-        const draggedFrom = dragAndDrop.draggedFrom;
+        const draggedFrom = Number(dragAndDrop.draggedFrom);
 
         const draggedTo = Number(e.currentTarget.dataset.position);
 
         const itemDragged = newList[draggedFrom];
 
-        const remainingItems = newList.filter((item, key) => key !== draggedFrom);
+        const remainingItems = newList.filter((item, key) => {
+            return key !== draggedFrom;
+        });
 
         newList = [
             ...remainingItems.slice(0, draggedTo),
@@ -83,10 +89,8 @@ const TodoList = () => {
                 draggedTo: draggedTo,
             });
         }
-    };
 
-    const onDropHandler = (e) => {
-        setList(dragAndDrop.updatedOrder);
+        setList(newList);
 
         setDragAndDrop({
             ...dragAndDrop,
@@ -98,10 +102,12 @@ const TodoList = () => {
 
     return (
         <Card className=''>
-            <ul className='flex flex-col'>
+            <ul className='flex flex-col w-full'>
                 {list.map((item, key) => {
+                    console.log(item);
                     return (
                         <li
+                            className='w-full'
                             key={key}
                             draggable='true'
                             onDragStart={onDragStartHandler}

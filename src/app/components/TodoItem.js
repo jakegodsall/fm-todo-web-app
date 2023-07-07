@@ -17,7 +17,7 @@ const TodoItem = ({ item }) => {
     const onDeleteHandler = () => {};
 
     return (
-        <div className='flex items-center justify-between  p-4 border-b-2'>
+        <div className='flex items-center justify-between p-4 border-b-2 cursor-pointer'>
             <div className='flex gap-4 items-center'>
                 <SelectButton isComplete={isComplete} setIsComplete={setIsCompleteHandler} />
                 <p className={isComplete ? 'font-bold line-through' : 'font-bold'}>
