@@ -15,11 +15,14 @@ export default function Home() {
     };
 
     return (
-        <div className='bg-mobile-light w-full h-[16rem] bg-no-repeat bg-cover bg-center'>
+        <div className='bg-mobile-light w-full h-[16rem] bg-no-repeat bg-cover bg-center flex flex-col'>
             <Header />
             <TodoInput />
             <TodoList />
             <FilterBar filter={filter} setFilter={setFilterHandler} />
+            <p className='text-center text-[1.4rem] text-[#9495A5] tracking-wide mt-[4rem]'>
+                Drag and drop to reorder list
+            </p>
         </div>
     );
 }

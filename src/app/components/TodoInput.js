@@ -31,7 +31,7 @@ const TodoInput = () => {
             >
                 <SelectButton />
                 <input
-                    className='w-full font-bold bg-inherit outline-none'
+                    className='w-full font-bold bg-inherit outline-none text-[1.2rem]'
                     type='text'
                     name='todo'
                     placeholder='Create a new todo...'
