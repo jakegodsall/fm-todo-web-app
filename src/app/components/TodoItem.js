@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { ListDataContext } from '../contexts/listDataContext';
 
 import Image from 'next/image';
 
@@ -9,12 +10,21 @@ import SelectButton from './UI/SelectButton';
 
 const TodoItem = ({ item }) => {
     const [isComplete, setIsComplete] = useState(item.complete);
+    const { list, setList } = useContext(ListDataContext);
 
     const setIsCompleteHandler = () => {
         setIsComplete((prevState) => !prevState);
     };
 
-    const onDeleteHandler = () => {};
+    const onDeleteHandler = (e) => {
+        const textContent = e.target.previousElementSibling.lastElementChild.innerHTML;
+
+        const newList = list.filter((item) => {
+            return item.content !== textContent;
+        });
+
+        setList(newList);
+    };
 
     return (
         <div className='flex items-center justify-between p-4 border-b-2 cursor-pointer'>
