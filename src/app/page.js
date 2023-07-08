@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 import FilterBar from './components/FilterBar';
 import Header from './components/Header';
@@ -15,14 +16,22 @@ export default function Home() {
     };
 
     return (
-        <div className='bg-mobile-light w-full h-[16rem] bg-no-repeat bg-cover bg-center flex flex-col'>
-            <Header />
-            <TodoInput />
-            <TodoList />
-            <FilterBar filter={filter} setFilter={setFilterHandler} />
-            <p className='text-center text-[1.4rem] text-[#9495A5] tracking-wide mt-[4rem]'>
-                Drag and drop to reorder list
-            </p>
-        </div>
+        <AnimatePresence>
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 1 }}
+                className='bg-mobile-light w-full h-[16rem] bg-no-repeat bg-cover bg-center flex flex-col'
+            >
+                <Header />
+                <TodoInput />
+                <TodoList />
+                <FilterBar filter={filter} setFilter={setFilterHandler} />
+                <p className='text-center text-[1.4rem] text-[#9495A5] tracking-wide mt-[4rem]'>
+                    Drag and drop to reorder list
+                </p>
+            </motion.div>
+        </AnimatePresence>
     );
 }

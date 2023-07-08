@@ -11,7 +11,7 @@ const FilterBar = ({ filter, setFilter }) => {
 
     return (
         <Card>
-            <div className='flex gap-8 font-bold p-8'>
+            <div className='flex gap-8 font-bold p-8 text-[1.4rem]'>
                 <label
                     className={labelClass}
                     onClick={onClickHandler}
