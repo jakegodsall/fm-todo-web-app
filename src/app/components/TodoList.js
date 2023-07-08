@@ -79,7 +79,7 @@ const TodoList = () => {
 
     return (
         <Card>
-            <div className='flex flex-col items-center'>
+            <div className='flex flex-col items-center w-full'>
                 <ul className='flex flex-col w-full'>
                     <AnimatePresence mode='popLayout'>
                         {list.map((item, key) => {
