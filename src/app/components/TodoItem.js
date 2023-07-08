@@ -40,7 +40,14 @@ const TodoItem = ({ item }) => {
                     {item.content}
                 </p>
             </div>
-            <Image src={CrossIcon} alt='cross' onClick={onDeleteHandler} />
+            <Image
+                src={CrossIcon}
+                width='12'
+                height='12'
+                className='w-[1.2rem] h-[1.2rem]'
+                alt='cross'
+                onClick={onDeleteHandler}
+            />
         </div>
     );
 };
