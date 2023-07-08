@@ -35,6 +35,7 @@ const TodoInput = () => {
                     type='text'
                     name='todo'
                     placeholder='Create a new todo...'
+                    maxLength='32'
                 />
             </form>
         </Card>
