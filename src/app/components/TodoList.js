@@ -6,6 +6,7 @@ import { motion, AnimatePresence, LayoutGroup } from 'framer-motion';
 import { ListDataContext } from '../contexts/listDataContext';
 import Card from './UI/Card';
 import TodoItem from './TodoItem';
+import SummaryBar from './SummaryBar';
 
 const TodoList = () => {
     const initialDnDState = {
@@ -77,31 +78,34 @@ const TodoList = () => {
     };
 
     return (
-        <Card className=''>
-            <ul className='flex flex-col w-full'>
-                <AnimatePresence mode='popLayout'>
-                    {list.map((item, key) => {
-                        console.log(item);
-                        return (
-                            <motion.li
-                                layout
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{ duration: 0.75 }}
-                                className='w-full'
-                                key={key}
-                                draggable='true'
-                                onDragStart={onDragStartHandler}
-                                onDragOver={onDragOverHandler}
-                                onDrop={onDropHandler}
-                                data-position={key}
-                            >
-                                <TodoItem item={item} />
-                            </motion.li>
-                        );
-                    })}
-                </AnimatePresence>
-            </ul>
+        <Card>
+            <div className='flex flex-col items-center'>
+                <ul className='flex flex-col w-full'>
+                    <AnimatePresence mode='popLayout'>
+                        {list.map((item, key) => {
+                            console.log(item);
+                            return (
+                                <motion.li
+                                    layout
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ duration: 0.75 }}
+                                    className='w-full'
+                                    key={key}
+                                    draggable='true'
+                                    onDragStart={onDragStartHandler}
+                                    onDragOver={onDragOverHandler}
+                                    onDrop={onDropHandler}
+                                    data-position={key}
+                                >
+                                    <TodoItem item={item} />
+                                </motion.li>
+                            );
+                        })}
+                    </AnimatePresence>
+                    <SummaryBar />
+                </ul>
+            </div>
         </Card>
     );
 };
