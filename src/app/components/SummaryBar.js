@@ -6,13 +6,10 @@ const SummaryBar = () => {
 
     const incompleteCount = list.reduce((acc, val) => {
         if (!val.complete) {
-            console.log(val, !val.complete);
             return acc + 1;
         }
         return acc;
     }, 0);
-
-    console.log('count', incompleteCount);
 
     const clearCompletedHandler = () => {};
 

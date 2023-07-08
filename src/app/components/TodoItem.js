@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useContext } from 'react';
+import { useState, useContext, useRef } from 'react';
 import { ListDataContext } from '../contexts/listDataContext';
 
 import Image from 'next/image';
@@ -12,8 +12,27 @@ const TodoItem = ({ item }) => {
     const [isComplete, setIsComplete] = useState(item.complete);
     const { list, setList } = useContext(ListDataContext);
 
+    const pRef = useRef();
+
     const setIsCompleteHandler = () => {
         setIsComplete((prevState) => !prevState);
+
+        const todoContent = pRef.current.innerHTML;
+
+        const newValue = list.filter((el) => el.content === todoContent)[0];
+        newValue.complete = !newValue.complete;
+
+        setList((prevState) => {
+            const newList = prevState.map((val) => {
+                if (val.content !== todoContent) {
+                    return val;
+                } else {
+                    return newValue;
+                }
+            });
+
+            return newList;
+        });
     };
 
     const onDeleteHandler = (e) => {
@@ -36,6 +55,7 @@ const TodoItem = ({ item }) => {
                             ? 'font-bold text-[1.2rem] line-through tablet:text-[1.8rem] tablet:font-normal text-[#d1d2da]'
                             : 'font-bold text-[1.2rem] tablet:text-[1.8rem] tablet:font-normal'
                     }
+                    ref={pRef}
                 >
                     {item.content}
                 </p>

@@ -83,7 +83,6 @@ const TodoList = () => {
                 <ul className='flex flex-col w-full'>
                     <AnimatePresence mode='popLayout'>
                         {list.map((item, key) => {
-                            console.log(item);
                             return (
                                 <motion.li
                                     layout
