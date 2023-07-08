@@ -13,7 +13,7 @@
 .light {
     --color-text-primary: hsl(235, 19%, 35%);
     --color-text-secondary: hsl(233, 11%, 84%);
-    --color-bg-primary: hsl(0, 0%, 98%);
+    --color-bg-primary: #fafafa;
     --color-bg-secondary: hsl(236, 33%, 92%);
 }
 

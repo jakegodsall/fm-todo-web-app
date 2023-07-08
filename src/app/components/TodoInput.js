@@ -27,11 +27,11 @@ const TodoInput = () => {
         <Card>
             <form
                 onSubmit={onSubmitHandler}
-                className='w-full flex gap-[2.4rem] py-[1.8rem] px-[2rem]'
+                className='w-full flex items-center gap-[2.4rem] py-[1.8rem] px-[2rem]'
             >
                 <SelectButton />
                 <input
-                    className='w-full font-bold bg-inherit outline-none text-[1.2rem]'
+                    className='w-full bg-inherit outline-none text-[#393A4b] text-[1.2rem] tablet:text-[1.8rem]'
                     type='text'
                     name='todo'
                     placeholder='Create a new todo...'

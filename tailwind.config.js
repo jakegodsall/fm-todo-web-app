@@ -29,6 +29,9 @@ module.exports = {
                 'mobile-dark': 'url("/assets/images/bg-mobile-dark.jpg")',
                 'mobile-light': 'url("/assets/images/bg-mobile-light.jpg")',
             },
+            screens: {
+                tablet: ' 540px',
+            },
         },
     },
     plugins: [],
