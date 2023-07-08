@@ -10,8 +10,8 @@ const SelectButton = ({ isComplete, setIsComplete }) => {
     };
 
     const buttonClass = isComplete
-        ? 'w-12 h-12 inline p-[.7rem] rounded-full border-[2px] border-[#d2d3db] bg-black border-black transition-all duration-200 cursor-pointer'
-        : 'w-12 h-12 inline p-[1.3rem] rounded-full border-[2px] border-[#d2d3db] border-black transition-all duration-200 cursor-pointer';
+        ? 'w-[2rem] h-[2rem] inline p-[.4rem] rounded-full bg-gradient-to-br from-stop1 to-stop2 transition-all duration-200 cursor-pointer'
+        : 'w-[2rem] h-[2rem] p-[.8rem] inline rounded-full border-[2px] border-[#E3E4F1] transition-all duration-200 cursor-pointer';
 
     return (
         <Image

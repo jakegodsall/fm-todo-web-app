@@ -27,10 +27,16 @@ const TodoItem = ({ item }) => {
     };
 
     return (
-        <div className='flex items-center justify-between p-4 border-b-2 cursor-pointer'>
+        <div className='flex items-center justify-between px-[2.4rem] py-[1.6rem] border-b-2 cursor-pointer'>
             <div className='flex gap-4 items-center'>
                 <SelectButton isComplete={isComplete} setIsComplete={setIsCompleteHandler} />
-                <p className={isComplete ? 'font-bold line-through' : 'font-bold'}>
+                <p
+                    className={
+                        isComplete
+                            ? 'font-bold text-[1.2rem] line-through'
+                            : 'font-bold text-[1.2rem]'
+                    }
+                >
                     {item.content}
                 </p>
             </div>

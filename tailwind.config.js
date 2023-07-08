@@ -8,9 +8,9 @@ module.exports = {
     ],
     theme: {
         extend: {
-            gradientColorStops: {
-                stop1: 'var(--linear-gradient1)',
-                stop2: 'var(--linear-gradient2)',
+            colors: {
+                stop1: 'var(--color-linear-gradient1)',
+                stop2: 'var(--color-linear-gradient2)',
             },
             backgroundColor: {
                 primary: 'var(--color-bg-primary)',
