@@ -2,34 +2,8 @@
 
 import Card from './UI/Card';
 import TodoItem from './TodoItem';
-import { useState } from 'react';
-
-const TODO = [
-    {
-        content: 'Complete online JavaScript course',
-        complete: true,
-    },
-    {
-        content: 'Jog around the park 3x',
-        complete: false,
-    },
-    {
-        content: '10 minutes meditation',
-        complete: true,
-    },
-    {
-        content: 'Read for 1 hour',
-        complete: false,
-    },
-    {
-        content: 'Pick up groceries',
-        complete: false,
-    },
-    {
-        content: 'Complete Todo App on Frontend Mentor',
-        complete: false,
-    },
-];
+import { useState, useContext } from 'react';
+import { ListDataContext } from '../contexts/listDataContext';
 
 const TodoList = () => {
     const initialDnDState = {
@@ -41,7 +15,7 @@ const TodoList = () => {
     };
 
     const [dragAndDrop, setDragAndDrop] = useState(initialDnDState);
-    const [list, setList] = useState(TODO);
+    const { list, setList } = useContext(ListDataContext);
 
     const onDragStartHandler = (e) => {
         // get initial number in the list
