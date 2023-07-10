@@ -22,27 +22,27 @@ const Header = () => {
     }, [isDark]);
 
     return (
-        <header className='flex items-center justify-between p-[3rem] w-full'>
-            <p className='uppercase text-white text-[2.5rem] font-bold tracking-[1rem] tablet:text-[3.3rem] tablet:tracking-[1.2rem]'>
+        <header className="flex w-full items-center justify-between p-[3rem]">
+            <p className="text-[2.5rem] font-bold uppercase tracking-[1rem] text-white tablet:text-[3.3rem] tablet:tracking-[1.2rem]">
                 todo
             </p>
             {isDark && (
                 <Image
                     src={IconSun}
-                    alt='sun'
-                    height='20px'
-                    width='20px'
-                    className='w-[2rem] h-[2rem] cursor-pointer tablet:w-[2.6rem] tablet:h-[2.6rem]'
+                    alt="sun"
+                    height="20px"
+                    width="20px"
+                    className="h-[2rem] w-[2rem] cursor-pointer tablet:h-[2.6rem] tablet:w-[2.6rem]"
                     onClick={onClickHandler}
                 />
             )}
             {!isDark && (
                 <Image
                     src={IconMoon}
-                    alt='moon'
-                    height='20px'
-                    width='20px'
-                    className='w-[2rem] h-[2rem] cursor-pointer tablet:w-[2.6rem] tablet:h-[2.6rem]'
+                    alt="moon"
+                    height="20px"
+                    width="20px"
+                    className="h-[2rem] w-[2rem] cursor-pointer tablet:h-[2.6rem] tablet:w-[2.6rem]"
                     onClick={onClickHandler}
                 />
             )}

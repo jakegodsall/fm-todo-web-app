@@ -14,7 +14,7 @@ const SummaryBar = () => {
     const clearCompletedHandler = () => {};
 
     return (
-        <div className='flex justify-between text-[1.2rem] text-[#9495a5] mx-[2rem] my-[2.2rem]'>
+        <div className="mx-[2rem] my-[2.2rem] flex justify-between text-[1.2rem] text-[#9495a5]">
             <p>{incompleteCount} items left</p>
             <p onClick={clearCompletedHandler}>Clear Completed</p>
         </div>

@@ -16,9 +16,9 @@ const SelectButton = ({ isComplete, setIsComplete }) => {
     return (
         <Image
             src={IconCheck}
-            alt='tick'
-            width='20px'
-            height='20px'
+            alt="tick"
+            width="20px"
+            height="20px"
             className={buttonClass}
             onClick={onClickHandler}
         />

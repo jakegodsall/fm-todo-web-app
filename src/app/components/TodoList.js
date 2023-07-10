@@ -79,9 +79,9 @@ const TodoList = () => {
 
     return (
         <Card>
-            <div className='flex flex-col items-center w-full'>
-                <ul className='flex flex-col w-full'>
-                    <AnimatePresence mode='popLayout'>
+            <div className="flex w-full flex-col items-center">
+                <ul className="flex w-full flex-col">
+                    <AnimatePresence mode="popLayout">
                         {list.map((item, key) => {
                             return (
                                 <motion.li
@@ -89,9 +89,9 @@ const TodoList = () => {
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
                                     transition={{ duration: 0.75 }}
-                                    className='w-full'
+                                    className="w-full"
                                     key={key}
-                                    draggable='true'
+                                    draggable="true"
                                     onDragStart={onDragStartHandler}
                                     onDragOver={onDragOverHandler}
                                     onDrop={onDropHandler}

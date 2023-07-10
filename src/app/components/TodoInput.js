@@ -27,15 +27,15 @@ const TodoInput = () => {
         <Card>
             <form
                 onSubmit={onSubmitHandler}
-                className='w-full flex items-center gap-[2.4rem] py-[1.8rem] px-[2rem]'
+                className="flex w-full items-center gap-[2.4rem] px-[2rem] py-[1.8rem]"
             >
                 <SelectButton />
                 <input
-                    className='w-full bg-inherit outline-none text-[#393A4b] text-[1.2rem] tablet:text-[1.8rem]'
-                    type='text'
-                    name='todo'
-                    placeholder='Create a new todo...'
-                    maxLength='32'
+                    className="w-full bg-inherit text-[1.2rem] text-[#393A4b] outline-none tablet:text-[1.8rem]"
+                    type="text"
+                    name="todo"
+                    placeholder="Create a new todo..."
+                    maxLength="32"
                 />
             </form>
         </Card>

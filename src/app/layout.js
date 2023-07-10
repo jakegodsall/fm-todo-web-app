@@ -16,8 +16,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
     return (
-        <html lang='en' className={josefin.className}>
-            <body className='text-primary bg-secondary'>
+        <html lang="en" className={josefin.className}>
+            <body className="bg-secondary text-primary">
                 <DarkModeProvider>
                     <ListDataProvider>{children}</ListDataProvider>
                 </DarkModeProvider>

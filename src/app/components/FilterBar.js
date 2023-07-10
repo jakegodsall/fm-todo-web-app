@@ -11,34 +11,44 @@ const FilterBar = ({ filter, setFilter }) => {
 
     return (
         <Card>
-            <div className='flex gap-8 font-bold p-8 text-[1.4rem] text-[#9495A5]'>
+            <div className="flex gap-8 p-8 text-[1.4rem] font-bold text-[#9495A5]">
                 <label
                     className={labelClass}
                     onClick={onClickHandler}
-                    htmlFor='all'
+                    htmlFor="all"
                     active={filter === 'all'}
                 >
                     All
                 </label>
-                <input type='radio' name='filter' id='all' className='hidden' />
+                <input type="radio" name="filter" id="all" className="hidden" />
                 <label
                     className={labelClass}
                     onClick={onClickHandler}
-                    htmlFor='active'
+                    htmlFor="active"
                     active={filter === 'active'}
                 >
                     Active
                 </label>
-                <input type='radio' name='filter' id='active' className='hidden' />
+                <input
+                    type="radio"
+                    name="filter"
+                    id="active"
+                    className="hidden"
+                />
                 <label
                     className={labelClass}
                     onClick={onClickHandler}
-                    htmlFor='completed'
+                    htmlFor="completed"
                     active={filter === 'completed'}
                 >
                     Completed
                 </label>
-                <input type='radio' name='filter' id='completed' className='hidden' />
+                <input
+                    type="radio"
+                    name="filter"
+                    id="completed"
+                    className="hidden"
+                />
             </div>
         </Card>
     );

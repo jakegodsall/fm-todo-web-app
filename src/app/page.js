@@ -22,14 +22,14 @@ export default function Home() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 1 }}
-                className='bg-mobile-light w-full h-[16rem] bg-no-repeat bg-cover bg-center flex flex-col'
+                className="flex h-[16rem] w-full flex-col bg-mobile-light bg-cover bg-center bg-no-repeat"
             >
-                <div className='mx-auto w-full max-w-[57rem]'>
+                <div className="mx-auto w-full max-w-[57rem]">
                     <Header />
                     <TodoInput />
                     <TodoList />
                     <FilterBar filter={filter} setFilter={setFilterHandler} />
-                    <p className='text-center text-[1.4rem] text-[#9495A5] tracking-wide mt-[4rem]'>
+                    <p className="mt-[4rem] text-center text-[1.4rem] tracking-wide text-[#9495A5]">
                         Drag and drop to reorder list
                     </p>
                 </div>

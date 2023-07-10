@@ -35,7 +35,9 @@ const ListDataProvider = ({ initialListState, children }) => {
     const [list, setList] = useState(TODO);
 
     return (
-        <ListDataContext.Provider value={{ list, setList }}>{children}</ListDataContext.Provider>
+        <ListDataContext.Provider value={{ list, setList }}>
+            {children}
+        </ListDataContext.Provider>
     );
 };
 

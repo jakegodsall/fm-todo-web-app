@@ -36,7 +36,8 @@ const TodoItem = ({ item }) => {
     };
 
     const onDeleteHandler = (e) => {
-        const textContent = e.target.previousElementSibling.lastElementChild.innerHTML;
+        const textContent =
+            e.target.previousElementSibling.lastElementChild.innerHTML;
 
         const newList = list.filter((item) => {
             return item.content !== textContent;
@@ -46,14 +47,17 @@ const TodoItem = ({ item }) => {
     };
 
     return (
-        <div className='flex items-center justify-between px-[2.4rem] py-[1.6rem] border-b-2 cursor-pointer'>
-            <div className='flex gap-4 items-center tablet:gap-[2.4rem]'>
-                <SelectButton isComplete={isComplete} setIsComplete={setIsCompleteHandler} />
+        <div className="flex cursor-pointer items-center justify-between border-b-2 px-[2.4rem] py-[1.6rem]">
+            <div className="flex items-center gap-4 tablet:gap-[2.4rem]">
+                <SelectButton
+                    isComplete={isComplete}
+                    setIsComplete={setIsCompleteHandler}
+                />
                 <p
                     className={
                         isComplete
-                            ? 'font-bold text-[1.2rem] line-through tablet:text-[1.8rem] tablet:font-normal text-[#d1d2da]'
-                            : 'font-bold text-[1.2rem] tablet:text-[1.8rem] tablet:font-normal'
+                            ? 'text-[1.2rem] font-bold text-[#d1d2da] line-through tablet:text-[1.8rem] tablet:font-normal'
+                            : 'text-[1.2rem] font-bold tablet:text-[1.8rem] tablet:font-normal'
                     }
                     ref={pRef}
                 >
@@ -62,10 +66,10 @@ const TodoItem = ({ item }) => {
             </div>
             <Image
                 src={CrossIcon}
-                width='12'
-                height='12'
-                className='w-[1.2rem] h-[1.2rem]'
-                alt='cross'
+                width="12"
+                height="12"
+                className="h-[1.2rem] w-[1.2rem]"
+                alt="cross"
                 onClick={onDeleteHandler}
             />
         </div>
