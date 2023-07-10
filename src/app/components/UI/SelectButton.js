@@ -6,7 +6,7 @@ import IconCheck from '../../../../public/assets/images/icon-check.svg';
 
 const SelectButton = ({ isComplete, setIsComplete }) => {
     const onClickHandler = () => {
-        setIsComplete(!isComplete);
+        setIsComplete((prevState) => !prevState);
     };
 
     const buttonClass = isComplete

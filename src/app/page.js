@@ -28,7 +28,7 @@ export default function Home() {
                     <Header />
                     <TodoInput />
                     <TodoList />
-                    <FilterBar filter={filter} setFilter={setFilterHandler} />
+                    {/* <FilterBar filter={filter} setFilter={setFilterHandler} /> */}
                     <p className="mt-[4rem] text-center text-[1.4rem] tracking-wide text-[#9495A5]">
                         Drag and drop to reorder list
                     </p>

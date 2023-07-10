@@ -39,11 +39,13 @@ const TodoItem = ({ item }) => {
         const textContent =
             e.target.previousElementSibling.lastElementChild.innerHTML;
 
-        const newList = list.filter((item) => {
-            return item.content !== textContent;
-        });
+        setList((prevState) => {
+            const newList = prevState.filter((item) => {
+                return item.content !== textContent;
+            });
 
-        setList(newList);
+            return newList;
+        });
     };
 
     return (

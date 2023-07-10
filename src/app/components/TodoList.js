@@ -41,6 +41,7 @@ const TodoList = () => {
 
     const onDropHandler = (e) => {
         let newList = dragAndDrop.originalOrder;
+        console.log(newList);
 
         const draggedFrom = Number(dragAndDrop.draggedFrom);
 
@@ -57,6 +58,8 @@ const TodoList = () => {
             itemDragged,
             ...remainingItems.slice(draggedTo),
         ];
+
+        console.log(newList);
 
         if (draggedTo !== dragAndDrop.draggedTo) {
             setDragAndDrop({
@@ -75,6 +78,9 @@ const TodoList = () => {
             draggedTo: null,
             isDragging: false,
         });
+
+        console.log('dragged from', draggedFrom);
+        console.log('dragged to', draggedTo);
     };
 
     return (
