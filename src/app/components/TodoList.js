@@ -31,7 +31,7 @@ const TodoList = ({ filter }) => {
         } else {
             setFilteredList(list);
         }
-    }, [filter]);
+    }, [filter, list]);
 
     const onDragStartHandler = (e) => {
         // get initial number in the list
