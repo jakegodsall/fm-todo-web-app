@@ -15,8 +15,6 @@ const TodoItem = ({ item }) => {
     const pRef = useRef();
 
     const setIsCompleteHandler = () => {
-        setIsComplete((prevState) => !prevState);
-
         const todoContent = pRef.current.innerHTML;
 
         const newValue = list.filter((el) => el.content === todoContent)[0];
@@ -31,8 +29,10 @@ const TodoItem = ({ item }) => {
                 }
             });
 
-            return newList;
+            return [...newList];
         });
+
+        setIsComplete((prevState) => !prevState);
     };
 
     const onDeleteHandler = (e) => {

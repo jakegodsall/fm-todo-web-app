@@ -88,7 +88,8 @@ const TodoList = () => {
             <div className="flex w-full flex-col items-center">
                 <ul className="flex w-full flex-col">
                     <AnimatePresence mode="popLayout">
-                        {list.map((item, key) => {
+                        {list.map((item, idx) => {
+                            console.log(item);
                             return (
                                 <motion.li
                                     layout
@@ -96,12 +97,12 @@ const TodoList = () => {
                                     animate={{ opacity: 1 }}
                                     transition={{ duration: 0.75 }}
                                     className="w-full"
-                                    key={key}
+                                    key={item.id}
                                     draggable="true"
                                     onDragStart={onDragStartHandler}
                                     onDragOver={onDragOverHandler}
                                     onDrop={onDropHandler}
-                                    data-position={key}
+                                    data-position={idx}
                                 >
                                     <TodoItem item={item} />
                                 </motion.li>
