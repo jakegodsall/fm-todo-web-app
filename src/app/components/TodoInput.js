@@ -14,6 +14,7 @@ const TodoInput = () => {
 
         const input = e.target.todo.value;
         const obj = {
+            id: list.length + 1,
             content: input,
             complete: false,
         };
