@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { motion, AnimatePresence, LayoutGroup } from 'framer-motion';
 
 import { ListDataContext } from '../contexts/listDataContext';
@@ -8,7 +8,9 @@ import Card from './UI/Card';
 import TodoItem from './TodoItem';
 import SummaryBar from './SummaryBar';
 
-const TodoList = () => {
+import { filterActive, filterCompleted } from '../utils/filters';
+
+const TodoList = ({ filter }) => {
     const initialDnDState = {
         draggedFrom: null,
         draggedTo: null,
@@ -19,6 +21,17 @@ const TodoList = () => {
 
     const [dragAndDrop, setDragAndDrop] = useState(initialDnDState);
     const { list, setList } = useContext(ListDataContext);
+    const [filteredList, setFilteredList] = useState(list);
+
+    useEffect(() => {
+        if (filter === 'active') {
+            setFilteredList(filterActive(list));
+        } else if (filter === 'completed') {
+            setFilteredList(filterCompleted(list));
+        } else {
+            setFilteredList(list);
+        }
+    }, [filter]);
 
     const onDragStartHandler = (e) => {
         // get initial number in the list
@@ -29,7 +42,7 @@ const TodoList = () => {
             ...dragAndDrop,
             draggedFrom: initialPosition,
             isDragging: true,
-            originalOrder: list,
+            originalOrder: filteredList,
         });
 
         e.dataTransfer.setData('text/html', '');
@@ -88,7 +101,7 @@ const TodoList = () => {
             <div className="flex w-full flex-col items-center">
                 <ul className="flex w-full flex-col">
                     <AnimatePresence mode="popLayout">
-                        {list.map((item, idx) => {
+                        {filteredList.map((item, idx) => {
                             console.log(item);
                             return (
                                 <motion.li
