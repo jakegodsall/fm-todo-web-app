@@ -40,6 +40,20 @@ const ListDataContext = createContext();
 const ListDataProvider = ({ initialListState, children }) => {
     const [list, setList] = useState(TODO);
 
+    // Load todos from local storage on initial render
+    useEffect(() => {
+        const todos = localStorage.getItem('todos');
+        if (todos) {
+            const parsed = JSON.parse(todos);
+            setList(parsed);
+        }
+    }, []);
+
+    // Update the local storage when the list changes
+    useEffect(() => {
+        localStorage.setItem('todos', JSON.stringify(list));
+    }, [list]);
+
     return (
         <ListDataContext.Provider value={{ list, setList }}>
             {children}
