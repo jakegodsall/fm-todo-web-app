@@ -23,7 +23,7 @@ const SummaryBar = () => {
     };
 
     return (
-        <div className="mx-[2rem] my-[2.2rem] flex justify-between text-[1.2rem] text-[#9495a5]">
+        <div className="mx-[2rem] my-[2.2rem] flex justify-between text-[1.2rem] text-secondary">
             <p>{incompleteCount} items left</p>
             <p className="cursor-pointer" onClick={clearCompletedHandler}>
                 Clear Completed

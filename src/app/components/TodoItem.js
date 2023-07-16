@@ -49,7 +49,7 @@ const TodoItem = ({ item }) => {
     };
 
     return (
-        <div className="flex cursor-pointer items-center justify-between border-b-2 px-[2.4rem] py-[1.6rem]">
+        <div className="flex cursor-pointer items-center justify-between border-b-2 px-[2.4rem] py-[1.6rem] dark:border-[#393A4B]">
             <div className="flex items-center gap-4 tablet:gap-[2.4rem]">
                 <SelectButton
                     isComplete={isComplete}
@@ -58,8 +58,8 @@ const TodoItem = ({ item }) => {
                 <p
                     className={
                         isComplete
-                            ? 'text-[1.2rem] font-bold text-[#d1d2da] line-through tablet:text-[1.8rem] tablet:font-normal'
-                            : 'text-[1.2rem] font-bold tablet:text-[1.8rem] tablet:font-normal'
+                            ? 'text-[1.2rem] text-secondary line-through tablet:text-[1.8rem] tablet:font-normal'
+                            : 'text-[1.2rem] tablet:text-[1.8rem] tablet:font-normal'
                     }
                     ref={pRef}
                 >

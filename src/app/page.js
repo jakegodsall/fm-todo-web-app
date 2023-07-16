@@ -29,7 +29,7 @@ export default function Home() {
                     <TodoInput />
                     <TodoList filter={filter} setFilter={setFilter} />
                     <FilterBar filter={filter} setFilter={setFilterHandler} />
-                    <p className="mt-[4rem] text-center text-[1.4rem] tracking-wide text-[#9495A5]">
+                    <p className="mt-[4rem] text-center text-[1.4rem] tracking-wide text-secondary">
                         Drag and drop to reorder list
                     </p>
                 </div>

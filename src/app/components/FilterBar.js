@@ -14,7 +14,7 @@ const FilterBar = () => {
         <Card>
             <div
                 className={
-                    'flex gap-8 p-8 text-[1.4rem] font-bold text-[#9495A5]'
+                    'flex gap-8 p-8 text-[1.4rem] font-bold text-secondary'
                 }
             >
                 <label
