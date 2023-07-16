@@ -23,7 +23,7 @@ export default function Home() {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 1 }}
-                    className="flex h-[22rem] w-full flex-col bg-mobile-light bg-cover bg-center bg-no-repeat dark:bg-mobile-dark tablet:bg-desktop-light dark:tablet:bg-desktop-dark"
+                    className="flex h-[22rem] w-full flex-col bg-mobile-light bg-cover bg-center bg-no-repeat dark:bg-mobile-dark tablet:h-[30rem] tablet:bg-desktop-light dark:tablet:bg-desktop-dark"
                 >
                     <div className="mx-auto w-full max-w-[57rem]">
                         <Header />

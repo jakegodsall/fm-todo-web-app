@@ -22,7 +22,7 @@ const Header = () => {
     }, [isDark]);
 
     return (
-        <header className="flex w-full items-center justify-between p-[3rem]">
+        <header className="flex w-full items-center justify-between p-[3rem] tablet:pt-[7rem]">
             <p className="text-[2.5rem] font-bold uppercase tracking-[1rem] text-white tablet:text-[3.3rem] tablet:tracking-[1.2rem]">
                 todo
             </p>
