@@ -9,8 +9,9 @@ import TodoItem from './TodoItem';
 import SummaryBar from './SummaryBar';
 
 import { filterActive, filterCompleted } from '../utils/filters';
+import { FilterContext } from '../contexts/filterContext';
 
-const TodoList = ({ filter }) => {
+const TodoList = () => {
     const initialDnDState = {
         draggedFrom: null,
         draggedTo: null,
@@ -20,7 +21,10 @@ const TodoList = ({ filter }) => {
     };
 
     const [dragAndDrop, setDragAndDrop] = useState(initialDnDState);
+
     const { list, setList } = useContext(ListDataContext);
+    const { filter, setFilter } = useContext(FilterContext);
+
     const [filteredList, setFilteredList] = useState(list);
 
     useEffect(() => {
@@ -91,15 +95,12 @@ const TodoList = ({ filter }) => {
             draggedTo: null,
             isDragging: false,
         });
-
-        console.log('dragged from', draggedFrom);
-        console.log('dragged to', draggedTo);
     };
 
     return (
         <Card>
             <div className="flex w-full flex-col items-center">
-                <ul className="flex w-full flex-col">
+                <motion.ul className="flex w-full flex-col">
                     <AnimatePresence mode="popLayout">
                         {filteredList.map((item, idx) => {
                             console.log(item);
@@ -123,7 +124,7 @@ const TodoList = ({ filter }) => {
                         })}
                     </AnimatePresence>
                     <SummaryBar />
-                </ul>
+                </motion.ul>
             </div>
         </Card>
     );

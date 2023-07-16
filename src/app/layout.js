@@ -4,6 +4,7 @@ import { Josefin_Sans } from 'next/font/google';
 
 import { DarkModeProvider } from './contexts/darkModeContext';
 import { ListDataProvider } from './contexts/listDataContext';
+import { FilterProvider } from './contexts/filterContext';
 
 const josefin = Josefin_Sans({
     subsets: ['latin'],
@@ -19,7 +20,9 @@ export default function RootLayout({ children }) {
         <html lang="en" className={josefin.className}>
             <body className="bg-secondary text-primary">
                 <DarkModeProvider>
-                    <ListDataProvider>{children}</ListDataProvider>
+                    <ListDataProvider>
+                        <FilterProvider>{children}</FilterProvider>
+                    </ListDataProvider>
                 </DarkModeProvider>
             </body>
         </html>

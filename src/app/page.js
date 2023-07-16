@@ -27,7 +27,7 @@ export default function Home() {
                 <div className="mx-auto w-full max-w-[57rem]">
                     <Header />
                     <TodoInput />
-                    <TodoList filter={filter} />
+                    <TodoList filter={filter} setFilter={setFilter} />
                     <FilterBar filter={filter} setFilter={setFilterHandler} />
                     <p className="mt-[4rem] text-center text-[1.4rem] tracking-wide text-[#9495A5]">
                         Drag and drop to reorder list

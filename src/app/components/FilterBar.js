@@ -1,9 +1,10 @@
-import React from 'react';
+import { useContext } from 'react';
 
 import Card from './UI/Card';
+import { FilterContext } from '../contexts/filterContext';
 
-const FilterBar = ({ filter, setFilter }) => {
-    const labelClass = 'active:text-white';
+const FilterBar = () => {
+    const { filter, setFilter } = useContext(FilterContext);
 
     const onClickHandler = (e) => {
         setFilter(e.target.innerHTML.toLowerCase());
@@ -11,21 +12,31 @@ const FilterBar = ({ filter, setFilter }) => {
 
     return (
         <Card>
-            <div className="flex gap-8 p-8 text-[1.4rem] font-bold text-[#9495A5]">
+            <div
+                className={
+                    'flex gap-8 p-8 text-[1.4rem] font-bold text-[#9495A5]'
+                }
+            >
                 <label
-                    className={labelClass}
+                    className={
+                        filter === 'all'
+                            ? 'cursor-pointer text-[#3A7CFD] '
+                            : 'cursor-pointer'
+                    }
                     onClick={onClickHandler}
                     htmlFor="all"
-                    active={filter === 'all'}
                 >
                     All
                 </label>
                 <input type="radio" name="filter" id="all" className="hidden" />
                 <label
-                    className={labelClass}
+                    className={
+                        filter === 'active'
+                            ? 'cursor-pointer text-[#3A7CFD]'
+                            : 'cursor-pointer'
+                    }
                     onClick={onClickHandler}
                     htmlFor="active"
-                    active={filter === 'active'}
                 >
                     Active
                 </label>
@@ -36,10 +47,13 @@ const FilterBar = ({ filter, setFilter }) => {
                     className="hidden"
                 />
                 <label
-                    className={labelClass}
+                    className={
+                        filter === 'completed'
+                            ? 'cursor-pointer text-[#3A7CFD]'
+                            : 'cursor-pointer'
+                    }
                     onClick={onClickHandler}
                     htmlFor="completed"
-                    active={filter === 'completed'}
                 >
                     Completed
                 </label>

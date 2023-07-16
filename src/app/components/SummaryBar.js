@@ -1,9 +1,11 @@
 import { useContext } from 'react';
 import { ListDataContext } from '../contexts/listDataContext';
 import { filterActive } from '../utils/filters';
+import { FilterContext } from '../contexts/filterContext';
 
 const SummaryBar = () => {
     const { list, setList } = useContext(ListDataContext);
+    const { filter, setFilter } = useContext(FilterContext);
 
     const incompleteCount = list.reduce((acc, val) => {
         if (!val.complete) {
@@ -16,6 +18,8 @@ const SummaryBar = () => {
         setList((prevState) => {
             return filterActive(prevState);
         });
+
+        setFilter('all');
     };
 
     return (
